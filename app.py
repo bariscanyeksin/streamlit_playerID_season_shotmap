@@ -199,9 +199,12 @@ if player_id and entry_id:
             shotmap_url = f"https://www.fotmob.com/api/playerStats?playerId={player_id}&seasonId={entry_id}"
             shotmap_response = requests.get(shotmap_url)
             shotmap_data = shotmap_response.json()
-            shotmap = shotmap_data.get("shotmap", [])
-            if shotmap is not None: 
-                return shotmap
+            if shotmap_data:
+                shotmap = shotmap_data.get("shotmap", [])
+                    if shotmap is not None: 
+                        return shotmap
+                    else:
+                        return None
             else:
                 return None
     
