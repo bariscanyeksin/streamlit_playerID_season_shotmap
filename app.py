@@ -134,8 +134,8 @@ ax_shotmap.axis('off')
 primary_text_color = '#818f86'
 pitch_color = '#0e1117'
 
-player_id = st.sidebar.text_input("Oyuncu ID:", placeholder="737066", value="737066", help="FotMob oyuncu ID'si.")
-entry_id = st.sidebar.text_input("Sezon ID:", placeholder="0-0", value="0-0", help="FotMob'un belirlediği sezon ID'si.")
+player_id = st.sidebar.text_input("Player ID:", placeholder="737066", value="737066", help="FotMob Player ID")
+entry_id = st.sidebar.text_input("Season ID:", placeholder="0-0", value="0-0", help="FotMob Season ID")
 
 if player_id and entry_id:
 
@@ -427,7 +427,7 @@ if player_id and entry_id:
             mime="image/png"
         )
     else:
-        st.write('Oyuncu verisi bulunamadı.')
+        st.write('Player data not found.')
         
     # Function to convert image to base64
     def img_to_base64(img_path):
@@ -486,4 +486,4 @@ if player_id and entry_id:
     )
     
 else:
-    st.warning("Lütfen hem Oyuncu ID'sini hem de Season ID'sini girin.")
+    st.warning("Please enter both Player ID and Season ID.")
