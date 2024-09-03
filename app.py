@@ -421,7 +421,7 @@ if player_id and entry_id:
         file_name = f"{player_name_replaced}_{league_string}_{season_string}_shotmap.png"
         
         st.download_button(
-            label="Grafiği İndir",
+            label="Download",
             data=buf,
             file_name=file_name,
             mime="image/png"
