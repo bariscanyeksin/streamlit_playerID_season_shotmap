@@ -267,10 +267,11 @@ if player_id and entry_id:
         shotmap_data = get_shotmap_data(player_id, entry_id)
         player_shooting_stats = get_player_shooting_stats(player_id, entry_id)
         player_match_stats = get_player_match_played_stats(player_id, entry_id)
-    
-        matches_played = player_match_stats["Matches"]
-        started_in_11 = player_match_stats["Started"]
-        minutes_played = player_match_stats["Minutes"]
+
+        if player_match_stats:
+            matches_played = player_match_stats["Matches"]
+            started_in_11 = player_match_stats["Started"]
+            minutes_played = player_match_stats["Minutes"]
     
         if shotmap_data is not None:
             # 'Goals' başlığını arayarak gol sayısını çekme
