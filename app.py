@@ -243,21 +243,26 @@ if player_id and entry_id:
             url = f"https://www.fotmob.com/api/playerStats?playerId={player_id}&seasonId={season_id}"
             response = requests.get(url)
             data = response.json()
+
+            if data:
     
-            # Stats section içerisindeki verileri al
-            stats_section = data.get("topStatCard", {}).get("items", [])
-    
-            match_stats = {
-                "Matches": None,
-                "Started": None,
-                "Minutes": None
-            }
-    
-            for stat in stats_section:
-                if stat.get("title") in match_stats:
-                    match_stats[stat["title"]] = stat.get("statValue")
-    
-            return match_stats
+                # Stats section içerisindeki verileri al
+                stats_section = data.get("topStatCard", {}).get("items", [])
+        
+                match_stats = {
+                    "Matches": None,
+                    "Started": None,
+                    "Minutes": None
+                }
+        
+                for stat in stats_section:
+                    if stat.get("title") in match_stats:
+                        match_stats[stat["title"]] = stat.get("statValue")
+        
+                return match_stats
+
+            else:
+                return None
     
         shotmap_data = get_shotmap_data(player_id, entry_id)
         player_shooting_stats = get_player_shooting_stats(player_id, entry_id)
