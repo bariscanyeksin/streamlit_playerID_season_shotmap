@@ -134,8 +134,8 @@ ax_shotmap.axis('off')
 primary_text_color = '#818f86'
 pitch_color = '#0e1117'
 
-player_id = st.sidebar.text_input("Oyuncu ID:")
-entry_id = st.sidebar.text_input("Season ID:")
+player_id = st.sidebar.text_input("Oyuncu ID:", placeholder="737066")
+entry_id = st.sidebar.text_input("Sezon ID:", placeholder="0-0")
 
 if player_id and entry_id:
 
