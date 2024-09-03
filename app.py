@@ -313,18 +313,18 @@ if player_id and entry_id:
                 else:
                     shot_color = 'gray'
                     
-        ax_shotmap.text(0.937, 0.08, '@bariscanyeksin\nVeri: FotMob', transform=ax_shotmap.transAxes,
+        ax_shotmap.text(0.937, 0.08, '@bariscanyeksin\nData: FotMob', transform=ax_shotmap.transAxes,
                 fontsize=9, fontproperties=prop, ha='right', va='bottom', color=primary_text_color, weight='normal', alpha=0.5)
 
         pitch.scatter(58.1,66,ax=ax_shotmap,c=goal_color, s=100, edgecolors='black', marker='*', alpha=0.5, lw=0.5)
         pitch.scatter(56.2,66,ax=ax_shotmap,c=attemptSaved_color, s=100, edgecolors='black', marker='o', alpha=0.5, lw=1.5)
         pitch.scatter(54.2,66,ax=ax_shotmap,c=miss_color, s=50, edgecolors='black', marker='x', alpha=0.5, lw=1.5)
 
-        ax_shotmap.text(0.1, 0.147, 'Gol', transform=ax_shotmap.transAxes,
+        ax_shotmap.text(0.1, 0.147, 'Goal', transform=ax_shotmap.transAxes,
                 fontsize=9, fontproperties=prop, ha='left', va='bottom', color=primary_text_color, weight='normal', alpha=0.5)
-        ax_shotmap.text(0.1, 0.1155, 'Kurtarış/Blok', transform=ax_shotmap.transAxes,
+        ax_shotmap.text(0.1, 0.1155, 'Attempt Saved', transform=ax_shotmap.transAxes,
                 fontsize=9, fontproperties=prop, ha='left', va='bottom', color=primary_text_color, weight='normal', alpha=0.5)
-        ax_shotmap.text(0.1, 0.083, 'İsabetsiz', transform=ax_shotmap.transAxes,
+        ax_shotmap.text(0.1, 0.083, 'Miss', transform=ax_shotmap.transAxes,
                 fontsize=9, fontproperties=prop, ha='left', va='bottom', color=primary_text_color, weight='normal', alpha=0.5)
                     
         # Oyuncu görselini URL'den çekme
@@ -352,12 +352,12 @@ if player_id and entry_id:
         back_box = dict(boxstyle='round, pad=0.4', facecolor='wheat', alpha=0.5)
         back_box_2 = dict(boxstyle='round, pad=0.4', facecolor='#facd5c', alpha=0.5)
 
-        ax_info.text(0.08, 0.67, "Gol", size=12, ha="right", fontproperties=prop, color=primary_text_color)
-        ax_info.text(0.08, 0.60, "Toplam Şut", size=12, ha="right", fontproperties=prop, color=primary_text_color)
-        ax_info.text(0.08, 0.53, "İsabetli Şut", size=12, ha="right", fontproperties=prop, color=primary_text_color)
-        ax_info.text(0.08, 0.46, "Gol Beklentisi (xG)", size=12, ha="right", fontproperties=prop, color=primary_text_color)
-        ax_info.text(0.08, 0.39, "Penaltısız xG", size=12, ha="right", fontproperties=prop, color=primary_text_color)
-        ax_info.text(0.08, 0.32, "İsabetli Şutta xG", size=12, ha="right", fontproperties=prop, color=primary_text_color)
+        ax_info.text(0.08, 0.67, "Goal", size=12, ha="right", fontproperties=prop, color=primary_text_color)
+        ax_info.text(0.08, 0.60, "Shots", size=12, ha="right", fontproperties=prop, color=primary_text_color)
+        ax_info.text(0.08, 0.53, "Shots on Target", size=12, ha="right", fontproperties=prop, color=primary_text_color)
+        ax_info.text(0.08, 0.46, "Expected Goals (xG)", size=12, ha="right", fontproperties=prop, color=primary_text_color)
+        ax_info.text(0.08, 0.39, "Non-penalty xG (npXG)", size=12, ha="right", fontproperties=prop, color=primary_text_color)
+        ax_info.text(0.08, 0.32, "xG on Target (xGOT)", size=12, ha="right", fontproperties=prop, color=primary_text_color)
 
         ax_info.text(0.32, 0.671, str(goal_count), size=12, ha="center", fontproperties=prop, bbox=back_box_2, color='black')
         ax_info.text(0.32, 0.601, str(shots_count), size=12, ha="center", fontproperties=prop, bbox=back_box_2, color='black')
