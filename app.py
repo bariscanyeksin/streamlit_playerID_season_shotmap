@@ -413,10 +413,12 @@ if player_id and entry_id:
         # Görseli göster
         st.pyplot(fig)
         
+        player_name_replaced = player_name.replace(" ", "_")
+    
         buf = io.BytesIO()
         plt.savefig(buf, format="png", dpi = 300, bbox_inches = "tight")
         buf.seek(0)
-        file_name = f"{player_name}_{league_string}_{season_string}_shotmap.png"
+        file_name = f"{player_name_replaced}_{league_string}_{season_string}_shotmap.png"
         
         st.download_button(
             label="Grafiği İndir",
