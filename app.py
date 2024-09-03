@@ -355,9 +355,9 @@ if player_id and entry_id:
         ax_info.text(0.08, 0.67, "Goal", size=12, ha="right", fontproperties=prop, color=primary_text_color)
         ax_info.text(0.08, 0.60, "Shots", size=12, ha="right", fontproperties=prop, color=primary_text_color)
         ax_info.text(0.08, 0.53, "Shots on Target", size=12, ha="right", fontproperties=prop, color=primary_text_color)
-        ax_info.text(0.08, 0.46, "Expected Goals (xG)", size=12, ha="right", fontproperties=prop, color=primary_text_color)
-        ax_info.text(0.08, 0.39, "Non-penalty xG (npXG)", size=12, ha="right", fontproperties=prop, color=primary_text_color)
-        ax_info.text(0.08, 0.32, "xG on Target (xGOT)", size=12, ha="right", fontproperties=prop, color=primary_text_color)
+        ax_info.text(0.08, 0.46, "xG", size=12, ha="right", fontproperties=prop, color=primary_text_color)
+        ax_info.text(0.08, 0.39, "npXG", size=12, ha="right", fontproperties=prop, color=primary_text_color)
+        ax_info.text(0.08, 0.32, "xGOT", size=12, ha="right", fontproperties=prop, color=primary_text_color)
 
         ax_info.text(0.32, 0.671, str(goal_count), size=12, ha="center", fontproperties=prop, bbox=back_box_2, color='black')
         ax_info.text(0.32, 0.601, str(shots_count), size=12, ha="center", fontproperties=prop, bbox=back_box_2, color='black')
@@ -378,9 +378,9 @@ if player_id and entry_id:
         ax_shotmap.text(0.148, 1.015, str(league_season_string), transform=ax_shotmap.transAxes, size=12, ha="left", fontproperties=prop, weight='normal', color='white')
         
         # Örnek oyuncu bilgileri
-        data = [["Maç", matches_played],
-                ["İlk 11", started_in_11],
-                ["Dakika", minutes_played]]
+        data = [["Matches", matches_played],
+                ["Started", started_in_11],
+                ["Minutes", minutes_played]]
         
         bbox = Bbox([[-0.25, 0.1], [0.45, 0.225]])  # Sol alt köşe (0.05, 0.1), sağ üst köşe (0.3, 0.3)
         
