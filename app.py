@@ -134,8 +134,8 @@ ax_shotmap.axis('off')
 primary_text_color = '#818f86'
 pitch_color = '#0e1117'
 
-player_id = st.sidebar.text_input("Oyuncu ID:", placeholder="737066")
-entry_id = st.sidebar.text_input("Sezon ID:", placeholder="0-0")
+player_id = st.sidebar.text_input("Oyuncu ID:", placeholder="737066", value="737066", help="FotMob oyuncu ID'si.")
+entry_id = st.sidebar.text_input("Sezon ID:", placeholder="0-0", value="0-0", help="FotMob'un belirlediği sezon ID'si.")
 
 if player_id and entry_id:
 
