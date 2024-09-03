@@ -215,24 +215,26 @@ if player_id and entry_id:
             url = f"https://www.fotmob.com/api/playerStats?playerId={player_id}&seasonId={season_id}"
             response = requests.get(url)
             data = response.json()
-            
-            # Stats section içerisindeki 'Shooting' başlığı altındaki verileri al
-            stats_section = data.get("statsSection", {}).get("items", [])
-            
-            if not stats_section:
-                print("İstatistikler bölümü mevcut değil veya boş.")
+            if data:
+                # Stats section içerisindeki 'Shooting' başlığı altındaki verileri al
+                stats_section = data.get("statsSection", {}).get("items", [])
+                
+                if not stats_section:
+                    print("İstatistikler bölümü mevcut değil veya boş.")
+                    return None
+                
+                shooting_stats = None
+                for section in stats_section:
+                    if section.get("title") == "Shooting":
+                        shooting_stats = section.get("items", [])
+                        break
+                
+                if shooting_stats is None:
+                    print("Shooting istatistikleri bulunamadı.")
+                
+                return shooting_stats
+            else:
                 return None
-            
-            shooting_stats = None
-            for section in stats_section:
-                if section.get("title") == "Shooting":
-                    shooting_stats = section.get("items", [])
-                    break
-            
-            if shooting_stats is None:
-                print("Shooting istatistikleri bulunamadı.")
-            
-            return shooting_stats
     
         def get_player_match_played_stats(player_id, season_id):
             """
