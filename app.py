@@ -187,10 +187,18 @@ if player_id and entry_id:
     player_data = get_player_data(player_id)
     if player_data:
         player_name = player_data["name"]
-        team_id = player_data["primaryTeam"]["teamId"]
-        team_name = player_data["primaryTeam"]["teamName"]
-        league_id = player_data["mainLeague"]["leagueId"]
         season_string, league_string = fetch_player_season_and_league(player_id, entry_id)
+        
+        def get_team_name_from_season_and_league(data, season_string, league_string):
+            for season in data['careerHistory']['careerItems']['senior']['seasonEntries']:
+                if season['seasonName'] == season_string:
+                    for tournament in season['tournamentStats']:
+                        if tournament['leagueName'] == league_string:
+                            return season['team'], season['teamId']
+            return None
+        
+        team_name, team_id = get_team_name_from_season_and_league(player_data, season_string, league_string)
+
         league_season_string = f"{team_name} | {league_string} - {season_string}"
             
         def get_shotmap_data(player_id, entry_id):
