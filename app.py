@@ -373,7 +373,7 @@ if player_id and entry_id:
             back_box = dict(boxstyle='round, pad=0.4', facecolor='wheat', alpha=0.5)
             back_box_2 = dict(boxstyle='round, pad=0.4', facecolor='#facd5c', alpha=0.5)
     
-            ax_info.text(0.08, 0.67, "Goal", size=12, ha="right", fontproperties=prop, color=primary_text_color)
+            ax_info.text(0.08, 0.67, "Goals", size=12, ha="right", fontproperties=prop, color=primary_text_color)
             ax_info.text(0.08, 0.60, "Shots", size=12, ha="right", fontproperties=prop, color=primary_text_color)
             ax_info.text(0.08, 0.53, "Shots on Target", size=12, ha="right", fontproperties=prop, color=primary_text_color)
             ax_info.text(0.08, 0.46, "xG", size=12, ha="right", fontproperties=prop, color=primary_text_color)
