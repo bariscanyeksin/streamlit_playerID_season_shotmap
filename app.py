@@ -396,7 +396,7 @@ if player_id and entry_id:
             #ax_info.text(-0.08, 0.12, str(minutes_played), size=12, ha="center", fontproperties=prop, bbox=back_box, color='black')
             
             ax_shotmap.text(0.148, 1.055, str(player_name), transform=ax_shotmap.transAxes, size=21, ha="left", fontproperties=bold_prop, weight='bold', color='white')
-            ax_shotmap.text(0.148, 1.015, str(league_season_string), transform=ax_shotmap.transAxes, size=12, ha="left", fontproperties=prop, weight='normal', color='white')
+            ax_shotmap.text(0.148, 1.015, str(league_season_string), transform=ax_shotmap.transAxes, size=12, ha="left", fontproperties=prop, weight='normal', color=primary_text_color)
             
             # Örnek oyuncu bilgileri
             data = [["Matches", matches_played],
