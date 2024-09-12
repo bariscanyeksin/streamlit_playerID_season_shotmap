@@ -377,7 +377,7 @@ if player_id and entry_id:
             ax_info.text(0.08, 0.60, "Shots", size=12, ha="right", fontproperties=prop, color=primary_text_color)
             ax_info.text(0.08, 0.53, "Shots on Target", size=12, ha="right", fontproperties=prop, color=primary_text_color)
             ax_info.text(0.08, 0.46, "xG", size=12, ha="right", fontproperties=prop, color=primary_text_color)
-            ax_info.text(0.08, 0.39, "npXG", size=12, ha="right", fontproperties=prop, color=primary_text_color)
+            ax_info.text(0.08, 0.39, "npxG", size=12, ha="right", fontproperties=prop, color=primary_text_color)
             ax_info.text(0.08, 0.32, "xGOT", size=12, ha="right", fontproperties=prop, color=primary_text_color)
     
             ax_info.text(0.32, 0.671, str(goal_count), size=12, ha="center", fontproperties=prop, bbox=back_box_2, color='black')
