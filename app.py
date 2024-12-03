@@ -14,7 +14,6 @@ import matplotlib.gridspec as gridspec
 import io
 import base64
 from matplotlib.transforms import Bbox
-import httpx
 
 matplotlib.rcParams["figure.dpi"] = 300
 
